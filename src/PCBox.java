@@ -14,5 +14,4 @@ public class PCBox extends Pokedex{
             }
         }
     }
-
 }

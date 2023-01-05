@@ -28,8 +28,8 @@ public class Main {
         System.out.println(p3);
         System.out.println(p2);
 
-        Team PCBox = new Team(20,p,false);
-        Team team = new Team(6,PCBox,true);
+        PCBox pcBox = new PCBox(20,p);
+        Team team = new Team(6,pcBox);
 
     }
 }

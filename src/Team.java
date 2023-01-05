@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Team extends Pokedex{
-    public Team (int pokemonNumber, Pokedex zoo, boolean removeFromZoo) {
+    public Team (int pokemonNumber, Pokedex zoo) {
         super();
         Random rd = new Random();
         for (int i = 0; i < pokemonNumber;i++) {
@@ -11,4 +11,4 @@ public class Team extends Pokedex{
             }
         }
     }
-}
+

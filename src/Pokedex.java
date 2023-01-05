@@ -44,4 +44,12 @@ public class Pokedex {
         return null;
     }
 
+    @Override
+    public String toString() {
+        String retour="";
+        for (Pokemon p : pokedex){
+            retour=retour + p + "\n";
+        }
+        return retour;
+    }
 }
