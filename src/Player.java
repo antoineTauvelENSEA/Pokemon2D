@@ -1,5 +1,6 @@
 public class Player {
     private String name;
-    private Pokedex PCBox;
+    private Team PCBox;
+    private Team team;
 
 }
