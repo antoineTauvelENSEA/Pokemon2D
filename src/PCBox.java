@@ -7,8 +7,10 @@ public class PCBox extends Pokedex{
         for (int i = 0; i < pokemonNumber; i++) {
             int index = rd.nextInt(zoo.pokedex.size());
             Pokemon toBeClone = zoo.pokedex.get(index);
+
             try {
-                pokedex.add((Pokemon) toBeClone.clone());
+                Pokemon clone = (Pokemon) toBeClone.clone();
+                this.pokedex.add(clone);
             } catch (Exception e) {
                 e.printStackTrace();
             }
