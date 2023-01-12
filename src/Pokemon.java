@@ -1,3 +1,8 @@
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
 public class Pokemon implements Cloneable {
     private int number;
     private String name;
@@ -12,6 +17,7 @@ public class Pokemon implements Cloneable {
     private double speed;
     private int generation;
     private boolean legendary;
+    private Image image;
 
     public Pokemon(int number, String name, String type_1, String type_2, double total, double healthPoint, double attack, double defense, double spAtk, double spDef, double speed, int generation, boolean legendary) {
         this.number=number;
@@ -27,6 +33,19 @@ public class Pokemon implements Cloneable {
         this.speed = speed;
         this.generation = generation;
         this.legendary = legendary;
+        this.image = null;
+    }
+
+    public Image getImage() {
+        if (this.image == null)
+        {
+            try {
+                this.image = ImageIO.read(new File("./img/pokemon/"+this.number+".png"));
+            }
+            catch (IOException e) {
+                e.printStackTrace();}
+        }
+        return image;
     }
 
     public int getNumber() {

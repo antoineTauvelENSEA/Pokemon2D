@@ -45,6 +45,10 @@ public class Player {
         }
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
     public static void main (String[] args){
         Pokedex p = new Pokedex("./data/pokedex.csv");
         Player toto = new Player("Toto",p);

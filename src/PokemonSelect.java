@@ -10,7 +10,7 @@ public class PokemonSelect extends JFrame implements ActionListener {
     JButton OKButton;
     JLabel label;
     int dummy=0;
-
+    TeamDisplay teamDisplay;
     Image exemple;
 
 
@@ -23,15 +23,13 @@ public class PokemonSelect extends JFrame implements ActionListener {
         label = new JLabel("Bonjour tout le monde");
         this.add(OKButton);
         this.add(label);
-        this.setVisible(true);
         OKButton.addActionListener(this);
-        try {
-            exemple = ImageIO.read(new File("./img/pokemon/0.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        this.getGraphics().drawImage(exemple,100,100,null);
+        teamDisplay = new TeamDisplay();
+        this.add(teamDisplay);
+
+        this.setVisible(true);
+
     }
 
     public static void main(String[] args){
