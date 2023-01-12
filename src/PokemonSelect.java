@@ -1,11 +1,18 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class PokemonSelect extends JFrame implements ActionListener {
     JButton OKButton;
     JLabel label;
     int dummy=0;
+
+    Image exemple;
+
 
     public PokemonSelect() {
         super("Pokemon select interface");
@@ -18,7 +25,13 @@ public class PokemonSelect extends JFrame implements ActionListener {
         this.add(label);
         this.setVisible(true);
         OKButton.addActionListener(this);
+        try {
+            exemple = ImageIO.read(new File("./img/pokemon/0.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        this.getGraphics().drawImage(exemple,100,100,null);
     }
 
     public static void main(String[] args){
