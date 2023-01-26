@@ -70,6 +70,10 @@ public class Pokemon implements Cloneable {
         return super.clone();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void attack(Pokemon p, AttackType a){
         double hitPoint;
         switch (a) {
