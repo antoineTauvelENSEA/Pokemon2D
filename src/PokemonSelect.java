@@ -1,19 +1,16 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class PokemonSelect extends JFrame implements ActionListener, MouseListener {
+public class PokemonSelect extends JFrame implements ActionListener {
     JButton battleButton;
     JLabel label;
-    int dummy=0;
     TeamDisplay[] teamDisplay=new TeamDisplay[2];
     JPanel arena=new JPanel();
     Player player1;
     Player player2;
+    BattleField battleField=null;
 
     public PokemonSelect(Player player1, Player player2) {
         super("Pokemon select interface");
@@ -27,7 +24,7 @@ public class PokemonSelect extends JFrame implements ActionListener, MouseListen
         this.add(battleButton);
         this.add(label);
         battleButton.addActionListener(this);
-        this.addMouseListener(this);
+
         arena.setLayout(new GridLayout(1,2));
 
         teamDisplay[0] = new TeamDisplay(player1,true);
@@ -39,6 +36,9 @@ public class PokemonSelect extends JFrame implements ActionListener, MouseListen
         this.add(arena);
 
         this.setVisible(true);
+
+        Timer timer = new Timer(100,this::actionPerformed);
+        timer.start();
 
     }
 
@@ -52,34 +52,13 @@ public class PokemonSelect extends JFrame implements ActionListener, MouseListen
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        dummy++;
-        System.out.println("click");
-        label.setText("You clicked "+dummy+" times");
+        if (e.getActionCommand()!=null) {
+            battleField=new BattleField(player1,player2);
+        }
+        else{
+            this.repaint();}
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        System.out.println(e);
-    }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-        System.out.println(e);
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
 }
 
