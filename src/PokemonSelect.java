@@ -46,7 +46,8 @@ public class PokemonSelect extends JFrame implements ActionListener {
         Pokedex p = new Pokedex("./data/pokedex.csv");
         Player player1 = new Player("Ash",p);
         Player player2 = new Player("Red",p);
-
+        System.out.println(player1.getTeam().getPokedex().get(0).getHealth());
+        System.out.println(player2.getTeam().getPokedex().get(0).getHealth());
         PokemonSelect gui = new PokemonSelect(player1,player2);
     }
 

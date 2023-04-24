@@ -100,4 +100,8 @@ public class Pokemon implements Cloneable {
         }
 
     }
+
+    public double getHealth() {
+        return healthPoint;
+    }
 }

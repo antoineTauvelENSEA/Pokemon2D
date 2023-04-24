@@ -16,6 +16,10 @@ public class TeamDisplay extends JPanel implements MouseListener {
         this.player=player;
         updateImageArray();
         this.addMouseListener(this);
+        if (left) {
+            this.setBackground(Color.DARK_GRAY);
+        }
+        else this.setBackground(Color.PINK);
     }
 
     private void updateImageArray() {

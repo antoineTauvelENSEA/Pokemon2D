@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Pokemon:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Pokemon_jar2</output-path>
+    <root id="archive" name="Pokemon.jar">
+      <element id="module-output" name="Pokemon" />
+      <element id="library" level="application" name="lib" />
+      <element id="dir-copy" path="$PROJECT_DIR$/img" />
+      <element id="dir-copy" path="$PROJECT_DIR$/data" />
+    </root>
+  </artifact>
+</component>
